@@ -1,0 +1,10 @@
+fastapi
+uvicorn
+python-multipart
+PyMuPDF
+scikit-learn
+jinja2
+spacy
+sentence-transformers
+chromadb
+python-dotenv
