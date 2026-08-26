@@ -1,0 +1,160 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f4f7fb;
+    color: #1e293b;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: min(950px, 92%);
+    margin: 40px auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 30px;
+}
+
+.header p {
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+.icon {
+    font-size: 42px;
+}
+
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 20px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 5px 18px rgba(15, 23, 42, 0.05);
+}
+
+label {
+    display: block;
+    margin: 15px 0 8px;
+    font-weight: bold;
+}
+
+.upload-box {
+    border: 2px dashed #94a3b8;
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    text-align: center;
+    color: #64748b;
+}
+
+.upload-box input {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 15px;
+    resize: vertical;
+}
+
+button {
+    margin-top: 18px;
+    border: none;
+    border-radius: 10px;
+    padding: 13px 22px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.hidden {
+    display: none;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.score-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.score-circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: #e0e7ff;
+    color: #1d4ed8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-circle span {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill {
+    padding: 7px 11px;
+    border-radius: 20px;
+    background: #dbeafe;
+    color: #1d4ed8;
+    font-size: 14px;
+}
+
+.missing-skill {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+li {
+    margin: 10px 0;
+    color: #475569;
+}
+
+@media (max-width: 650px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+}

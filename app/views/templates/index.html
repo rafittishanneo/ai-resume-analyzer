@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+    <title>AI Resume Analyzer</title>
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='css/style.css') }}"
+    >
+
+    <link
+    rel="icon"
+    type="image/x-icon"
+    href="{{ url_for('static', path='images/favicon.ico') }}"
+    >
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="icon">📄</div>
+
+            <div>
+                <h1>AI Resume Analyzer</h1>
+                <p>Compare a resume with a job description</p>
+            </div>
+        </header>
+
+        <section class="card">
+            <form id="resume-form">
+                <label for="resume">Upload Resume PDF</label>
+
+                <div class="upload-box">
+                    <input
+                        type="file"
+                        id="resume"
+                        accept=".pdf,application/pdf"
+                        required
+                    >
+                    <span id="file-name">
+                        Click here and choose a PDF resume
+                    </span>
+                </div>
+
+                <label for="job-description">
+                    Job Description
+                </label>
+
+                <textarea
+                    id="job-description"
+                    placeholder="Paste the full job description here..."
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Analyze Resume →
+                </button>
+            </form>
+
+            <p id="loading" class="hidden">
+                Please wait. Extracting resume text and matching skills...
+            </p>
+        </section>
+
+        <section id="results" class="hidden">
+            <div class="card score-card">
+                <div class="score-circle">
+                    <span id="score">0</span>
+                    <small>/100</small>
+                </div>
+
+                <div>
+                    <h2>Match Score</h2>
+                    <p id="score-text"></p>
+                </div>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h2>✅ Matched Skills</h2>
+                    <div id="matched-skills" class="skill-list"></div>
+                </div>
+
+                <div class="card">
+                    <h2>❌ Missing Skills</h2>
+                    <div id="missing-skills" class="skill-list"></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>💡 Improvement Suggestions</h2>
+                <ul id="suggestions"></ul>
+            </div>
+
+            <div class="card">
+                <h2>📌 Relevant Experience Detected</h2>
+                <ul id="experience"></ul>
+            </div>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', path='js/app.js') }}"></script>
+</body>
+</html>
